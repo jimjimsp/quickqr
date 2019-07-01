@@ -1,13 +1,402 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  width: 240px;
+  height: 430px;
+  background-color: rgb(255, 255, 255);
+}
+
+.frame {
+  position: absolute;
+  width: 240px;
+  height: 430px;
+
+  background: rgb(255, 255, 255);
+}
+
+.frame-title {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 20px;
+  top: -12px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #292929;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  cursor: default;
+}
+
+.frame-span {
+  color: #ffcc66;
+}
+
+.settings {
+  position: absolute;
+  width: 25px;
+  height: 22px;
+  left: 202px;
+  top: 16px;
+  font-size: 1.15rem;
+  color: #c8c8c8;
+  transition: all 0.4s;
+}
+
+.settings:hover {
+  color: #646464;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.code-bkg {
+  position: absolute;
+
+  top: 42px;
+  border: 5px solid #e1e3e1;
+  border-radius: 4px;
+}
+
+.code-content {
+  position: relative;
+}
+
+.line-one {
+  position: absolute;
+  width: 200px;
+  height: 0px;
+  left: 20px;
+  top: 213px;
+
+  border: 1px solid #e1e3e1;
+}
+
+.line-two {
+  position: absolute;
+  width: 200px;
+  height: 0px;
+  left: 20px;
+  top: 290px;
+
+  border: 1px solid #e1e3e1;
+}
+
+.auto-title {
+  position: absolute;
+  width: 200px;
+  height: 21px;
+  left: 20px;
+  top: 228px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.auto-input {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  left: 20px;
+  top: 260px;
+
+  background: #e1e3e1;
+  border: 1px solid #e1e3e1;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  padding: 2px;
+
+  overflow-y: hidden;
+
+  cursor: default;
+}
+
+.auto-input:focus {
+  outline: 0;
+}
+
+.input-title {
+  position: absolute;
+  width: 124px;
+  height: 19px;
+  left: 20px;
+  top: 300px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.input-input {
+  position: absolute;
+  width: 130px;
+  height: 18px;
+  left: 20px;
+  top: 333px;
+
+  background: #e1e3e1;
+  border-radius: 4px;
+
+  border: none;
+
+  overflow: hidden;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  padding: 2px;
+}
+
+.input-input:focus {
+  outline: 0;
+}
+
+.input-button {
+  position: absolute;
+  width: 60px;
+  height: 18px;
+  left: 160px;
+  top: 333px;
+  font-size: 0.7rem;
+  text-align: center;
+  padding-top: 4px;
+
+  border: none;
+  color: #292929;
+  background: #ffcc66;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.input-button:hover {
+  transform: scale(1.05);
+  background: #ffc34d;
+  cursor: pointer;
+}
+
+.input-button:active {
+  transition: all 0.1s;
+  transform: scale(1);
+  background: #ffcc66;
+}
+
+.download {
+  position: absolute;
+  width: 39px;
+  height: 31px;
+  left: 101px;
+  top: 374px;
+  padding-top: 8px;
+  font-size: 1.2rem;
+  color: #292929;
+  background: #ffcc66;
+
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.download:hover {
+  transform: scale(1.05);
+  background: #ffc34d;
+  cursor: pointer;
+}
+
+.download:active {
+  transition: all 0.1s;
+  transform: scale(1);
+  background: #ffcc66;
+}
+
+/* Settings menu */
+
+.settings-title {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  left: 22px;
+  top: 42px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.settings-bkg-text {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  left: 28px;
+  top: 74px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.settings-fg-text {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  left: 129px;
+  top: 74px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.selected {
+  transform: scale(1.2);
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.test-bkg {
+  position: absolute;
+  width: 71px;
+  height: 8px;
+  left: 28px;
+  top: 100px;
+  border-radius: 3px;
+  transition: all 0.2s;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+.test-fg {
+  position: absolute;
+  width: 71px;
+  height: 8px;
+  left: 129px;
+  top: 100px;
+  border-radius: 3px;
+  transition: all 0.2s;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+.picker {
+  position: absolute;
+  left: 18px;
+  top: 125px;
+}
+
+.title-preview {
+  position: absolute;
+  width: 74px;
+  height: 15px;
+  left: 28px;
+  top: 248px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.preview {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 145px;
+  top: 244px;
+
+  background: #c4c4c4;
+  border-radius: 4px;
+  box-shadow: 0px 2px 15px -5px rgba(0, 0, 0, 0.75);
+}
+
+.title-size {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  left: 28px;
+  top: 318px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.size-pick {
+  position: absolute;
+  width: 82px;
+  height: 15px;
+  left: 128px;
+  top: 329px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  outline: 0;
+  background: #ffcc66;
+  background-image: none;
+  color: black;
+  cursor: pointer;
+  padding-left: 20px;
+  border: none;
+
+  border-radius: 2px;
+}
+
+.size-pick:hover {
+  background: #ffc34d;
+}
+
+.title-margin {
+  position: absolute;
+  width: 100px;
+  height: 15px;
+  left: 28px;
+  top: 362px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #000000;
+  cursor: default;
+}
+
+.margin-pick {
+  position: absolute;
+  width: 82px;
+  height: 15px;
+  left: 164px;
+  top: 372px;
+  font-size: 0.7rem;
+  transform: scale(1.1);
 }

@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-pdf/renderer": "^1.6.2",
+    "html2canvas": "^1.0.0-rc.3",
+    "js-file-download": "^0.4.7",
+    "jspdf": "^1.5.3",
+    "qrcode.react": "^0.9.3",
     "react": "^16.8.6",
+    "react-color": "^2.17.3",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
@@ -27,5 +33,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0"
   }
 }
